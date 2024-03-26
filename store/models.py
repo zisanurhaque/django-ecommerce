@@ -25,7 +25,7 @@ class Product(models.Model):
     description = RichTextField()
     category = models.ForeignKey(Category, on_delete = models.CASCADE)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
-    stock = models.BooleanField(),
+    stock = models.BooleanField(default=True),
     tags = models.ManyToManyField(Tag)
     created_at = models.DateTimeField(default = timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
